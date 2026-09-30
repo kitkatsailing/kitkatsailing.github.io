@@ -43,6 +43,7 @@ FOTOS = {
  "nav-noche":    ("ig:C1cX9Dfr__d_04.jpg", 1440, "De noche, en el puerto", "In harbour at night"),
  "nav-chapuzon": ("ig:C1cX9Dfr__d_07.jpg", 1440, "Un chapuzón desde la borda", "A swim off the side"),
  "nav-botavara": (RB + "20230114_054432.jpg", 1500, "La botavara y el sol que sale", "The boom and the rising sun"),
+ "nav-rio":      ("ig:rio_DJDNnNvpzkC_1.jpg", 1440, "Fondeados en conserva, al atardecer en el río Uruguay. Foto: @sailing.frey", "At anchor in company, sunset on the Río Uruguay. Photo: @sailing.frey"),
  "nav-bsas":     ("ig:DASAbwxusMI_02.jpg", 1440, "En Buenos Aires", "In Buenos Aires"),
  # a bordo
  "salon":        ("ig:Cy8l99wLD-M_02.jpg", 1440, "El salón, con el tapizado nuevo", "The saloon, with its new upholstery"),

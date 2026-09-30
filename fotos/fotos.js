@@ -98,6 +98,13 @@ var FOTOS = {
   "t": "La botavara y el sol que sale",
   "en": "The boom and the rising sun"
  },
+ "nav-rio": {
+  "src": "fotos/nav-rio.jpg",
+  "w": 1440,
+  "h": 1440,
+  "t": "Fondeados en conserva, al atardecer en el río Uruguay. Foto: @sailing.frey",
+  "en": "At anchor in company, sunset on the Río Uruguay. Photo: @sailing.frey"
+ },
  "nav-bsas": {
   "src": "fotos/nav-bsas.jpg",
   "w": 1080,
