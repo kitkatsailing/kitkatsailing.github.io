@@ -27,8 +27,23 @@
     var l = lang() === "en" ? "es" : "en";
     document.documentElement.setAttribute("data-lang", l); document.documentElement.lang = l;
     try{ localStorage.setItem("kitkat.lang", l); }catch(e){}
-    textos();
+    textos(); pintarVisitas();
   });
+
+  /* contador de visitas al pie (GoatCounter, código pacaca). Si no responde, no se muestra nada. */
+  var visitas = null;
+  function pintarVisitas(){
+    var el = $("#visitas"); if(visitas == null || !el) return;
+    var en = lang() === "en";
+    el.textContent = visitas.toLocaleString(en ? "en-GB" : "es-UY") + (en ? (visitas === 1 ? " visit" : " visits") : (visitas === 1 ? " visita" : " visitas"));
+    el.hidden = false;
+  }
+  if(location.protocol === "https:" && window.fetch){
+    fetch("https://pacaca.goatcounter.com/counter/TOTAL.json").then(function(r){ return r.ok ? r.json() : null; }).then(function(j){
+      var n = j && parseInt(String(j.count).replace(/\D/g, ""), 10);
+      if(n >= 0){ visitas = n; pintarVisitas(); }
+    }).catch(function(){});
+  }
 
   function fsrc(k){ return FOTOS[k].src; }
   $$("[data-foto]").forEach(function(img){
