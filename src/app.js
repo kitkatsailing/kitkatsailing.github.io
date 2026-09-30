@@ -9,6 +9,27 @@
   /* ============================================================
      FOTOS Y VISOR
      ============================================================ */
+  /* ============================================================
+     IDIOMA (lo elige el script del <head>; el botón lo cambia y lo recuerda)
+     ============================================================ */
+  function lang(){ return document.documentElement.getAttribute("data-lang") === "en" ? "en" : "es"; }
+  function epi(k){ return lang() === "en" ? (FOTOS[k].en || FOTOS[k].t) : FOTOS[k].t; }
+  function textos(){
+    $$("[data-foto-fig]").forEach(function(fig){
+      var k = fig.getAttribute("data-foto-fig"), t = epi(k);
+      $("img", fig).alt = t; $("figcaption", fig).textContent = t;
+      fig.setAttribute("aria-label", (lang() === "en" ? "View larger: " : "Ver en grande: ") + t);
+    });
+    var hero = $("[data-foto]"); if(hero && FOTOS.portada) hero.alt = epi("portada");
+    $(".tabs").setAttribute("aria-label", lang() === "en" ? "Sections" : "Secciones");
+  }
+  $("#langBtn").addEventListener("click", function(){
+    var l = lang() === "en" ? "es" : "en";
+    document.documentElement.setAttribute("data-lang", l); document.documentElement.lang = l;
+    try{ localStorage.setItem("kitkat.lang", l); }catch(e){}
+    textos();
+  });
+
   function fsrc(k){ return FOTOS[k].src; }
   $$("[data-foto]").forEach(function(img){
     var k = img.getAttribute("data-foto"), f = FOTOS[k]; if(!f) return;
@@ -17,9 +38,10 @@
   $$("[data-foto-src]").forEach(function(s){ var k = s.getAttribute("data-foto-src"); if(FOTOS[k]) s.srcset = fsrc(k); else s.remove(); });
   $$("[data-foto-fig]").forEach(function(fig){
     var k = fig.getAttribute("data-foto-fig"), f = FOTOS[k]; if(!f){ fig.remove(); return; }
-    fig.innerHTML = '<img loading="lazy" decoding="async" src="' + fsrc(k) + '" width="' + f.w + '" height="' + f.h + '" alt="' + esc(f.t) + '"><figcaption>' + esc(f.t) + '</figcaption>';
-    fig.tabIndex = 0; fig.setAttribute("role", "button"); fig.setAttribute("aria-label", "Ver en grande: " + f.t);
+    fig.innerHTML = '<img loading="lazy" decoding="async" src="' + fsrc(k) + '" width="' + f.w + '" height="' + f.h + '" alt=""><figcaption></figcaption>';
+    fig.tabIndex = 0; fig.setAttribute("role", "button");
   });
+  textos();
   /* una galería sin ninguna foto (p. ej. el spinnaker, hasta tener la foto) no deja un hueco */
   $$("[data-galeria]").forEach(function(g){ if(!$("[data-foto-fig]", g)) g.remove(); });
 
@@ -27,9 +49,10 @@
   function abrirVisor(lista, ix){
     lbList = lista; lbIx = ix; lbPrevFocus = document.activeElement;
     lb = document.createElement("div");
-    lb.className = "lb"; lb.setAttribute("role", "dialog"); lb.setAttribute("aria-modal", "true"); lb.setAttribute("aria-label", "Foto en grande");
-    lb.innerHTML = '<img alt=""><p></p><button class="x" type="button" aria-label="Cerrar">&#10005;</button>' +
-      (lista.length > 1 ? '<button class="prev" type="button" aria-label="Anterior">&lsaquo;</button><button class="next" type="button" aria-label="Siguiente">&rsaquo;</button>' : '');
+    var en = lang() === "en";
+    lb.className = "lb"; lb.setAttribute("role", "dialog"); lb.setAttribute("aria-modal", "true"); lb.setAttribute("aria-label", en ? "Photo" : "Foto en grande");
+    lb.innerHTML = '<img alt=""><p></p><button class="x" type="button" aria-label="' + (en ? "Close" : "Cerrar") + '">&#10005;</button>' +
+      (lista.length > 1 ? '<button class="prev" type="button" aria-label="' + (en ? "Previous" : "Anterior") + '">&lsaquo;</button><button class="next" type="button" aria-label="' + (en ? "Next" : "Siguiente") + '">&rsaquo;</button>' : '');
     document.body.appendChild(lb);
     pintarVisor();
     lb.addEventListener("click", function(e){
@@ -39,7 +62,7 @@
     });
     $(".x", lb).focus();
   }
-  function pintarVisor(){ var k = lbList[lbIx]; $("img", lb).src = fsrc(k); $("img", lb).alt = FOTOS[k].t; $("p", lb).textContent = FOTOS[k].t; }
+  function pintarVisor(){ var k = lbList[lbIx]; $("img", lb).src = fsrc(k); $("img", lb).alt = epi(k); $("p", lb).textContent = epi(k); }
   function mover(d){ lbIx = (lbIx + d + lbList.length) % lbList.length; pintarVisor(); }
   function cerrarVisor(){ if(lb){ lb.remove(); lb = null; if(lbPrevFocus) lbPrevFocus.focus(); } }
   document.addEventListener("keydown", function(e){

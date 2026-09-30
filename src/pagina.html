@@ -1,20 +1,32 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kitkat · Endurance 37</title>
-<meta name="description" content="Kitkat, un Endurance 37 cutter construido en Inglaterra y navegando en Uruguay: su historia, el barco y cómo contactarnos.">
+<meta name="description" content="Kitkat, un Endurance 37 cutter construido en Inglaterra y navegando en Uruguay. Kitkat, an Endurance 37 cutter built in England, now sailing in Uruguay.">
 <meta name="theme-color" content="#f4ede0">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Kitkat · Endurance 37">
-<meta property="og:description" content="Un velero inglés en Uruguay. Su historia, sus velas y sus navegadas.">
+<meta property="og:description" content="Un velero inglés en Uruguay · An English vessel in Uruguay">
 <meta property="og:url" content="<!--URL-->">
 <meta property="og:image" content="<!--URL-->fotos/portada.jpg">
-<meta property="og:locale" content="es_UY">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="icons/icon-192.png">
 <link rel="apple-touch-icon" href="icons/icon-180.png">
+<script>
+  /* idioma: el que se eligió con el botón, si no el del navegador (español o, si no, inglés) */
+  (function(){
+    var l = null;
+    try{ l = localStorage.getItem("kitkat.lang"); }catch(e){}
+    if(l !== "es" && l !== "en"){
+      var n = (navigator.languages && navigator.languages[0]) || navigator.language || "es";
+      l = /^es/i.test(n) ? "es" : "en";
+    }
+    document.documentElement.lang = l;
+    document.documentElement.setAttribute("data-lang", l);
+  })();
+</script>
 <style>
   :root{
     color-scheme:light dark;
@@ -156,6 +168,11 @@
   .lb p{color:#eee;margin:10px 0 0;font-size:15px;text-align:center}
   .lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:999px;width:48px;height:48px;font-size:22px;cursor:pointer}
   .lb .x{top:calc(12px + env(safe-area-inset-top));right:12px}.lb .prev{left:10px;top:50%}.lb .next{right:10px;top:50%}
+  /* ---------- idioma ---------- */
+  html[data-lang="en"] .es, html[data-lang="es"] .en{display:none!important}
+  .langbtn{appearance:none;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;
+    font:600 13.5px var(--sans);padding:6px 12px;min-height:34px;cursor:pointer;white-space:nowrap}
+  .langbtn:hover{border-color:var(--burgundy)}
 </style>
 </head>
 <body>
@@ -163,12 +180,13 @@
   <div class="topin">
     <a class="brand" href="#inicio">Kitkat</a>
     <nav class="tabs" aria-label="Secciones">
-      <a href="#el-barco">El barco</a>
-      <a href="#el-nombre">El nombre</a>
-      <a href="#historia">Historia</a>
-      <a href="#navegadas">Navegadas</a>
-      <a class="ig" href="#contacto">Contacto</a>
+      <a href="#el-barco"><span class="es">El barco</span><span class="en">The boat</span></a>
+      <a href="#el-nombre"><span class="es">El nombre</span><span class="en">The name</span></a>
+      <a href="#historia"><span class="es">Historia</span><span class="en">History</span></a>
+      <a href="#navegadas"><span class="es">Navegadas</span><span class="en">Voyages</span></a>
+      <a class="ig" href="#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a>
     </nav>
+    <button class="langbtn" type="button" id="langBtn"><span class="es" lang="en">English</span><span class="en" lang="es">Español</span></button>
   </div>
 </header>
 
@@ -176,12 +194,12 @@
   <div class="hero">
     <picture>
       <source media="(max-aspect-ratio: 4/5)" data-foto-src="portada-alta">
-      <img data-foto="portada" alt="Kitkat fondeado, con la mayor recogida y el cielo despejado" fetchpriority="high">
+      <img data-foto="portada" alt="Kitkat" fetchpriority="high">
     </picture>
     <div class="herotext">
       <p class="eyebrow">Endurance 37 &middot; Cutter</p>
       <h1>Kitkat</h1>
-      <p class="by">Un velero inglés en Uruguay</p>
+      <p class="by"><span class="es">Un velero inglés en Uruguay</span><span class="en">An English vessel in Uruguay</span></p>
       <a class="btn" href="<!--IG-->" target="_blank" rel="noopener"><!--ICONO-->@<!--IGUSER--></a>
     </div>
   </div>
@@ -190,40 +208,50 @@
   <!-- ======================= EL BARCO ======================= -->
   <section class="sec twocol" id="el-barco">
     <div>
-      <p class="kicker">El barco</p>
-      <h2>Un crucero de altura, hecho para ir lejos sin apuro</h2>
-      <p class="lead">Kitkat es un Endurance 37: un velero de desplazamiento generoso, dibujado por Peter Ibold para navegar mar afuera con comodidad y con poca tripulación.</p>
-      <div class="prose">
+      <p class="kicker"><span class="es">El barco</span><span class="en">The boat</span></p>
+      <h2 class="es">Un crucero de altura, hecho para ir lejos sin apuro</h2>
+      <h2 class="en">A bluewater cruiser, built to go far and take her time</h2>
+      <p class="lead es">Kitkat es un Endurance 37: un velero de desplazamiento generoso, dibujado por Peter Ibold para navegar mar afuera con comodidad y con poca tripulación.</p>
+      <p class="lead en">Kitkat is an Endurance 37: a generous-displacement yacht designed by Peter Ibold to cross oceans in comfort with a small crew.</p>
+      <div class="prose es">
         <p>El casco y la cubierta salieron del molde de Tyler, en Inglaterra. Todo lo demás lo hizo su primer dueño, a mano y durante diez años. El resultado es un barco pesado, noble, con tres toneladas y media de hierro en la quilla y una casilla con ventanas a los cuatro lados: ahí se cocina, se navega y se come mirando el agua.</p>
         <p>Es <b>cutter</b>: un solo palo, con yankee y trinquetilla a proa y una mayor roja que se reconoce desde lejos.</p>
       </div>
+      <div class="prose en">
+        <p>Her hull and deck came out of Tyler's moulds in England. Everything else was built by her first owner, by hand, over ten years. The result is a heavy, honest boat with three and a half tonnes of iron in her keel and a deckhouse with windows on all four sides, where you cook, navigate and eat while watching the water.</p>
+        <p>She is <b>cutter</b> rigged: a single mast, yankee and staysail forward, and a red mainsail you can spot from miles away.</p>
+      </div>
     </div>
-    <div class="nums" role="list" aria-label="El barco en números">
-      <div role="listitem"><b>11,25 m</b><span>eslora total</span></div>
-      <div role="listitem"><b>3,50 m</b><span>manga</span></div>
-      <div role="listitem"><b>1,60 m</b><span>calado</span></div>
-      <div role="listitem"><b>9,5 t</b><span>desplazamiento</span></div>
-      <div role="listitem"><b>3.500 kg</b><span>de lastre</span></div>
-      <div role="listitem"><b>80 HP</b><span>Ford Lehman diésel</span></div>
+    <div class="nums" role="list">
+      <div role="listitem"><b><span class="es">11,25 m</span><span class="en">11.25 m</span></b><span class="es">eslora total</span><span class="en">length overall</span></div>
+      <div role="listitem"><b><span class="es">3,50 m</span><span class="en">3.50 m</span></b><span class="es">manga</span><span class="en">beam</span></div>
+      <div role="listitem"><b><span class="es">1,80 m</span><span class="en">1.80 m</span></b><span class="es">calado</span><span class="en">draught</span></div>
+      <div role="listitem"><b><span class="es">9,5 t</span><span class="en">9.5 t</span></b><span class="es">desplazamiento</span><span class="en">displacement</span></div>
+      <div role="listitem"><b><span class="es">3.500 kg</span><span class="en">3,500 kg</span></b><span class="es">de lastre</span><span class="en">ballast</span></div>
+      <div role="listitem"><b>80 HP</b><span>Ford Lehman diesel</span></div>
     </div>
   </section>
 
   <!-- ======================= EL NOMBRE ======================= -->
   <section class="sec twocol" id="el-nombre">
     <div>
-      <p class="kicker">El nombre</p>
-      <h2>Iba a llamarse <i>Take Five</i></h2>
-      <div class="prose">
+      <p class="kicker"><span class="es">El nombre</span><span class="en">The name</span></p>
+      <h2><span class="es">Iba a llamarse</span><span class="en">She was going to be called</span> <i>Take Five</i></h2>
+      <div class="prose es">
         <p>Peter y Sylvia, sus primeros dueños, compraron el casco y la cubierta desnudos. Peter calculó que terminarlo en el fondo de su casa le iba a llevar cinco años, y el barco iba a llamarse <i>Take Five</i>: el tema de jazz, y también “tomate un descanso”.</p>
         <p>Cinco años no alcanzaron. Peter le pidió cinco más a Sylvia, y cuando por fin estuvo, el nombre ya era otro: el de la publicidad que todos conocían en Inglaterra, <i>“Have a break, have a Kit Kat”</i>.</p>
+      </div>
+      <div class="prose en">
+        <p>Peter and Sylvia, her first owners, bought a bare hull and deck. Peter reckoned that finishing her in their back garden would take five years, so she was going to be called <i>Take Five</i>: the jazz standard, and also “take a break”.</p>
+        <p>Five years were not enough. Peter asked Sylvia for five more, and by the time she was finished the name had changed to the advert everyone in Britain knew: <i>“Have a break, have a Kit Kat”</i>.</p>
       </div>
     </div>
     <figure class="letter">
       <blockquote lang="en">
         <p>“Peter at first estimated that it would take him 5 years to build from a bare hull and deck. And the name was to be Take Five. A favourite jazz number also meaning take a break as it took longer than the five years we then went to the Kitkat advert “have a break, have a Kitkat”.”</p>
       </blockquote>
-      <p class="tr">“Al principio Peter calculó que le llevaría cinco años construirlo a partir del casco y la cubierta desnudos, y el nombre iba a ser <i>Take Five</i>, un tema de jazz que nos encantaba y que también quiere decir tomarse un descanso. Como llevó más de cinco años, fuimos a la publicidad de Kitkat: tomate un descanso, comete un Kitkat.”</p>
-      <figcaption>Sylvia, en un mensaje que nos mandó</figcaption>
+      <p class="tr es">“Al principio Peter calculó que le llevaría cinco años construirlo a partir del casco y la cubierta desnudos, y el nombre iba a ser <i>Take Five</i>, un tema de jazz que nos encantaba y que también quiere decir tomarse un descanso. Como llevó más de cinco años, fuimos a la publicidad de Kitkat: tomate un descanso, comete un Kitkat.”</p>
+      <figcaption><span class="es">Sylvia, en un mensaje que nos mandó</span><span class="en">Sylvia, in a message she sent us</span></figcaption>
     </figure>
   </section>
 
@@ -231,12 +259,13 @@
   <section class="sec twocol">
     <figure class="sailplan">
       <!--SVG-->
-      <figcaption>Plano vélico de Kitkat como cutter. Dibujo esquemático a partir del plano original.</figcaption>
+      <figcaption><span class="es">Plano vélico de Kitkat como cutter. Dibujo esquemático a partir del plano original.</span><span class="en">Kitkat's cutter sail plan. Schematic drawing based on the original plan.</span></figcaption>
     </figure>
     <div>
-      <p class="kicker">El aparejo</p>
-      <h2>Un palo, y velas para cada viento</h2>
-      <ul class="speclist">
+      <p class="kicker"><span class="es">El aparejo</span><span class="en">The rig</span></p>
+      <h2 class="es">Un palo, y velas para cada viento</h2>
+      <h2 class="en">One mast, and a sail for every wind</h2>
+      <ul class="speclist es">
         <li><b>Mástil</b><span>Seldén, con botavara y tangón de la misma marca</span></li>
         <li><b>Yankee</b><span>En enrollador Seldén Furlex, blanco con banda roja</span></li>
         <li><b>Trinquetilla</b><span>Blanca, en estay interior</span></li>
@@ -246,89 +275,129 @@
         <li><b>Gobierno</b><span>Rueda, piloto automático y timón de viento Aries</span></li>
         <li><b>Quilla</b><span>Corrida, con el timón colgado de su borde de popa</span></li>
       </ul>
+      <ul class="speclist en">
+        <li><b>Mast</b><span>Seldén, with matching boom and spinnaker pole</span></li>
+        <li><b>Yankee</b><span>On a Seldén Furlex furler, white with a red UV strip</span></li>
+        <li><b>Staysail</b><span>White, on the inner forestay</span></li>
+        <li><b>Mainsail</b><span>Red</span></li>
+        <li><b>Asymmetric</b><span>An asymmetric spinnaker painted by Sylvia</span></li>
+        <li><b>Storm</b><span>Trysail and storm jib</span></li>
+        <li><b>Steering</b><span>Wheel, autopilot and Aries wind vane</span></li>
+        <li><b>Keel</b><span>Long keel, with the rudder hung on its trailing edge</span></li>
+      </ul>
     </div>
   </section>
 
   <section class="sec twocol" id="spi">
     <div>
-      <p class="kicker">La sorpresa</p>
-      <h2>El spinnaker de Sylvia</h2>
-      <div class="prose">
+      <p class="kicker"><span class="es">La sorpresa</span><span class="en">The surprise</span></p>
+      <h2 class="es">El spinnaker de Sylvia</h2>
+      <h2 class="en">Sylvia's spinnaker</h2>
+      <div class="prose es">
         <p>Cuando sacamos todas las velas para revisarlas, apareció el asimétrico. Al desplegarlo encontramos un personaje enorme, de barba blanca y túnica roja, sobre olas de todos los colores. Lo pintó Sylvia.</p>
-        <p>No sabemos bien quién es. En el Instagram alguien preguntó si era Merlín; nosotros creemos que es algún dios del viento, y que cada vez que lo izamos está pidiendo brisa.</p>
+        <p>No sabemos bien quién es. En el Instagram alguien preguntó si era Merlín; nosotros creemos que es una especie de dios del viento, y que cada vez que lo izamos está pidiendo brisa.</p>
+      </div>
+      <div class="prose en">
+        <p>When we took every sail out to check them, the asymmetric appeared. Spread out on the ground, it revealed a huge figure with a white beard and a red robe, floating over waves of every colour. Sylvia painted it.</p>
+        <p>We are not quite sure who he is. Someone on Instagram asked whether it was Merlin; we like to think he is some kind of wind god, asking for a breeze every time we hoist him.</p>
       </div>
     </div>
-    <div class="mosaic two" data-galeria="spi">
-      <figure class="w2 h2" data-foto-fig="spi"></figure>
+    <div class="mosaic two" data-galeria="spi" style="grid-auto-rows:170px">
+      <figure class="w2 h2" data-foto-fig="spi-izado"></figure>
+      <figure class="h2" data-foto-fig="spi-dibujo"></figure>
+      <figure class="h2" data-foto-fig="spi-piso"></figure>
     </div>
   </section>
 
   <!-- ======================= NAVEGANDO ======================= -->
   <section class="sec">
-    <p class="kicker">Navegando</p>
-    <h2>Al caer el sol, las velas rojas</h2>
+    <p class="kicker"><span class="es">Navegando</span><span class="en">Under sail</span></p>
+    <h2 class="es">Al caer el sol, las velas rojas</h2>
+    <h2 class="en">Red sails at sunset</h2>
     <div class="mosaic" data-galeria="nav">
       <figure class="w2 h2 wide-m" data-foto-fig="nav-mayor"></figure>
-      <figure class="w2 h2" data-foto-fig="nav-yankee"></figure>
+      <figure class="w2 h2" data-foto-fig="nav-piria"></figure>
       <figure class="w2" data-foto-fig="nav-ocaso"></figure>
-      <figure class="w2" data-foto-fig="nav-botavara"></figure>
-      <figure class="w3 h2" data-foto-fig="nav-velas"></figure>
-      <figure class="w3" data-foto-fig="nav-proa"></figure>
-      <figure class="w3" data-foto-fig="nav-casa"></figure>
-      <figure class="w2" data-foto-fig="nav-orejas"></figure>
-      <figure class="w2" data-foto-fig="nav-costado"></figure>
-      <figure class="w2 wide-m" data-foto-fig="nav-cubierta"></figure>
+      <figure class="w2" data-foto-fig="nav-regata"></figure>
+      <figure class="w3 h2" data-foto-fig="nav-yankee"></figure>
+      <figure class="w3" data-foto-fig="nav-faro"></figure>
+      <figure class="w3" data-foto-fig="nav-fondeo"></figure>
+      <figure class="w2" data-foto-fig="nav-chapuzon"></figure>
+      <figure class="w2" data-foto-fig="nav-noche"></figure>
+      <figure class="w2 wide-m" data-foto-fig="nav-velas"></figure>
+      <figure class="w3" data-foto-fig="nav-botavara"></figure>
+      <figure class="w3" data-foto-fig="nav-bsas"></figure>
     </div>
-    <p class="quote">Un barco pesado, noble, que no se apura y no se asusta.</p>
+    <p class="quote es">Un barco pesado, noble, que no se apura y no se asusta.</p>
+    <p class="quote en">A heavy, honest boat that is never in a hurry and never frightened.</p>
   </section>
 
   <!-- ======================= A BORDO ======================= -->
   <section class="sec twocol">
     <div>
-      <p class="kicker">A bordo</p>
-      <h2>Vivir en la casilla</h2>
-      <div class="prose">
+      <p class="kicker"><span class="es">A bordo</span><span class="en">On board</span></p>
+      <h2 class="es">Vivir en la casilla</h2>
+      <h2 class="en">Living in the deckhouse</h2>
+      <div class="prose es">
         <p>Bajando desde la bañera se entra al salón de cubierta: la cocina, la mesa de navegación y la dinette comparten un mismo ambiente, con luz natural y vista afuera desde cualquier asiento.</p>
         <p>Hacia proa quedan el baño con ducha y los camarotes. Hay lugar para dormir hasta ocho personas.</p>
         <p>Toda la carpintería la hizo Peter en esos diez años: madera barnizada, ojos de buey y un interior bien de barco. En 2023 le renovamos el tapizado.</p>
+      </div>
+      <div class="prose en">
+        <p>Step down from the cockpit into the deck saloon: galley, chart table and dinette share one space, full of daylight, with a view out from every seat.</p>
+        <p>Forward are the heads with a shower and the cabins, with berths for up to eight people.</p>
+        <p>Peter built all the joinery during those ten years: varnished wood, portholes and a proper boat interior. In 2023 we gave her new upholstery.</p>
       </div>
     </div>
     <div class="mosaic two" data-galeria="abordo">
       <figure class="w2 h2" data-foto-fig="salon"></figure>
       <figure data-foto-fig="navegacion"></figure>
       <figure data-foto-fig="cocina"></figure>
-      <figure data-foto-fig="dinette"></figure>
+      <figure data-foto-fig="timon"></figure>
       <figure data-foto-fig="camarote"></figure>
     </div>
   </section>
 
   <!-- ======================= CONSTRUCCIÓN ======================= -->
   <section class="sec">
-    <p class="kicker">Construcción</p>
-    <h2>Hecho con escantillones de otra época</h2>
-    <div class="spec2">
+    <p class="kicker"><span class="es">Construcción</span><span class="en">Construction</span></p>
+    <h2 class="es">Hecho con escantillones de otra época</h2>
+    <h2 class="en">Built to the scantlings of another era</h2>
+    <div class="spec2 es">
       <div class="blk"><h3>Diseño</h3><p>Endurance 37, de Peter A. Ibold. Casco y cubierta moldeados por Tyler, en Inglaterra.</p></div>
       <div class="blk"><h3>Casco</h3><p>Fibra de vidrio, reforzada longitudinalmente con largueros de espuma.</p></div>
       <div class="blk"><h3>Unión casco–cubierta</h3><p>Pegada y encapsulada: forma una regala firme para apoyarse en la maniobra.</p></div>
-      <div class="blk"><h3>Quilla y lastre</h3><p>Quilla corrida, con 3.500 kg de hierro fundido totalmente encapsulado.</p></div>
+      <div class="blk"><h3>Quilla y lastre</h3><p>Quilla corrida, con 3.500 kg de hierro fundido totalmente encapsulado. Hoy cala 1,80 m, con todo el peso que lleva a bordo.</p></div>
       <div class="blk"><h3>Tanques</h3><p>Gran autonomía: unos 1.200 litros de agua y 540 de gasoil.</p></div>
       <div class="blk"><h3>Motor</h3><p>Ford Lehman de 80 HP, diésel de cuatro cilindros. El mismo desde el principio.</p></div>
       <div class="blk"><h3>Timón</h3><p>Pala de fibra de vidrio con mecha de acero inoxidable, más una caña de fortuna.</p></div>
       <div class="blk"><h3>Puesta a punto</h3><p>Desde 2023: jarcia fija y de labor nuevas, mástil, cubierta y obra muerta pintados, tablero eléctrico nuevo, piloto automático, AIS y VHF.</p></div>
     </div>
+    <div class="spec2 en">
+      <div class="blk"><h3>Design</h3><p>Endurance 37 by Peter A. Ibold. Hull and deck moulded by Tyler in England.</p></div>
+      <div class="blk"><h3>Hull</h3><p>GRP, stiffened longitudinally with foam stringers.</p></div>
+      <div class="blk"><h3>Hull–deck joint</h3><p>Bonded and glassed over, forming a solid toerail to brace against.</p></div>
+      <div class="blk"><h3>Keel and ballast</h3><p>Long keel with 3,500 kg of fully encapsulated cast iron. She now draws 1.80 m with everything she carries.</p></div>
+      <div class="blk"><h3>Tanks</h3><p>Long range: about 1,200 litres of water and 540 of diesel.</p></div>
+      <div class="blk"><h3>Engine</h3><p>80 HP four-cylinder Ford Lehman diesel, the same one since the beginning.</p></div>
+      <div class="blk"><h3>Rudder</h3><p>GRP blade on a stainless steel stock, plus an emergency tiller.</p></div>
+      <div class="blk"><h3>Refit</h3><p>Since 2023: new standing and running rigging; mast, deck and topsides repainted; new switchboard, autopilot, AIS and VHF.</p></div>
+    </div>
     <div class="mosaic" data-galeria="seco" style="margin-top:12px">
       <figure class="w3 h2 wide-m" data-foto-fig="grua"></figure>
+      <figure class="w3" data-foto-fig="obra"></figure>
       <figure class="w3" data-foto-fig="nombre"></figure>
-      <figure class="w3" data-foto-fig="varada"></figure>
+      <figure class="w3 wide-m" data-foto-fig="vuelve"></figure>
     </div>
   </section>
 
   <!-- ======================= HISTORIA ======================= -->
   <section class="sec twocol" id="historia">
     <div>
-      <p class="kicker">Historia</p>
-      <h2>Cuatro tripulaciones, un mismo barco</h2>
-      <ol class="timeline">
+      <p class="kicker"><span class="es">Historia</span><span class="en">History</span></p>
+      <h2 class="es">Cuatro tripulaciones, un mismo barco</h2>
+      <h2 class="en">Four crews, one boat</h2>
+      <ol class="timeline es">
         <li><span class="when">Inglaterra &middot; 13 años</span><b>Peter y Sylvia</b><br>
           Lo terminan en el fondo de su casa y fue de ellos durante trece años. Peter ya no está, pero con Sylvia seguimos en contacto: buscó a Kitkat por todos lados y nos encontró cuando abrimos su Instagram.</li>
         <li><span class="when">De Inglaterra a Uruguay &middot; 15 años</span><b>Sean y Debie</b><br>
@@ -338,7 +407,18 @@
         <li><span class="when">Desde diciembre de 2022</span><b>Nosotros</b><br>
           Veníamos de nuestro primer velero, el Luca, un D’Angelo 24. Conocimos a Kitkat en el Riachuelo, nos enamoramos y lo compramos. Hoy navega con toda la familia.</li>
       </ol>
-      <p class="fact">Un velero “famoso”: Kitkat aparece en la foto del <a href="https://en.wikipedia.org/wiki/River_Hamble" target="_blank" rel="noopener">río Hamble en Wikipedia</a>, muy cerca de donde se moldeó.</p>
+      <ol class="timeline en">
+        <li><span class="when">England &middot; 13 years</span><b>Peter and Sylvia</b><br>
+          They finish her in their back garden and keep her for thirteen years. Peter is no longer with us, but we are still in touch with Sylvia: she searched everywhere for Kitkat and found us when we started her Instagram.</li>
+        <li><span class="when">England to Uruguay &middot; 15 years</span><b>Sean and Debie</b><br>
+          They live aboard for fifteen years, cruising Europe, Africa, Brazil and Argentina, and bring her all the way to the Río de la Plata. They fall in love with Piriápolis, decide to settle there and sell the boat.</li>
+        <li><span class="when">Riachuelo, Colonia</span><b>Sebastián</b><br>
+          A Uruguayan sailor, a friend of friends, living aboard in the Riachuelo.</li>
+        <li><span class="when">Since December 2022</span><b>Us</b><br>
+          We came from our first boat, Luca, a D’Angelo 24. We met Kitkat in the Riachuelo, fell in love and bought her. Today she sails with the whole family.</li>
+      </ol>
+      <p class="fact es">Un velero “famoso”: Kitkat aparece en la foto del <a href="https://en.wikipedia.org/wiki/River_Hamble" target="_blank" rel="noopener">río Hamble en Wikipedia</a>, muy cerca de donde se moldeó.</p>
+      <p class="fact en">A “famous” boat: Kitkat appears in the <a href="https://en.wikipedia.org/wiki/River_Hamble" target="_blank" rel="noopener">River Hamble photo on Wikipedia</a>, very close to where she was moulded.</p>
     </div>
     <div class="mosaic two" data-galeria="historia">
       <figure class="w2 h2" data-foto-fig="h-casa"></figure>
@@ -355,10 +435,12 @@
 
   <!-- ======================= NAVEGADAS ======================= -->
   <section class="sec" id="navegadas">
-    <p class="kicker">Navegadas</p>
-    <h2>El Río de la Plata y la costa atlántica</h2>
-    <p class="lead">Después de más de dos años quieto en el Riachuelo, Kitkat volvió a navegar en enero de 2023. Pasó ocho meses en el varadero y desde entonces no para.</p>
-    <ol class="log">
+    <p class="kicker"><span class="es">Navegadas</span><span class="en">Voyages</span></p>
+    <h2 class="es">El Río de la Plata y la costa atlántica</h2>
+    <h2 class="en">The Río de la Plata and the Atlantic coast</h2>
+    <p class="lead es">Después de más de dos años quieto en el Riachuelo, Kitkat volvió a navegar en enero de 2023. Pasó ocho meses en el varadero y desde entonces no para.</p>
+    <p class="lead en">After more than two years sitting in the Riachuelo, Kitkat sailed again in January 2023. She spent eight months in the boatyard and has hardly stopped since.</p>
+    <ol class="log es">
       <li><time>Enero 2023</time><b>Riachuelo – Buceo</b><p>La primera travesía, con noche incluida.</p></li>
       <li><time>Setiembre 2023</time><b>Vuelve al agua</b><p>Después de pintura, interior y tapizado nuevos.</p></li>
       <li><time>Diciembre 2023</time><b>Montevideo – Piriápolis</b><p>Con la tripulación familiar.</p></li>
@@ -371,22 +453,44 @@
       <li><time>Julio 2025</time><b>Regata 119 aniversario del YCU</b><p>Un día hermoso, navegando con amigos.</p></li>
       <li><time>Octubre 2025</time><b>Montevideo – La Plata – Montevideo</b><p>Portantes a la ida, ceñida a la vuelta.</p></li>
     </ol>
+    <ol class="log en">
+      <li><time>January 2023</time><b>Riachuelo – Buceo</b><p>The first passage, overnight.</p></li>
+      <li><time>September 2023</time><b>Back in the water</b><p>After new paint, interior work and upholstery.</p></li>
+      <li><time>December 2023</time><b>Montevideo – Piriápolis</b><p>With the family crew.</p></li>
+      <li><time>February 2024</time><b>Punta Ballena</b><p>A sail and a night at anchor.</p></li>
+      <li><time>March 2024</time><b>Sean aboard</b><p>Sailing with one of her former owners.</p></li>
+      <li><time>September 2024</time><b>Montevideo – Buenos Aires</b><p>A spring-holiday week with the family.</p></li>
+      <li><time>January 2025</time><b>Montevideo – Mar del Plata – Piriápolis</b><p>An Atlantic passage.</p></li>
+      <li><time>February 2025</time><b>Piriápolis – La Paloma</b><p>Fourteen hours, mostly close-hauled.</p></li>
+      <li><time>March 2025</time><b>The Rocha coast</b><p>Cabo Polonio, Valizas, the ombú forest and the Santa Teresa fortress.</p></li>
+      <li><time>July 2025</time><b>YCU 119th anniversary regatta</b><p>A beautiful day sailing with friends.</p></li>
+      <li><time>October 2025</time><b>Montevideo – La Plata – Montevideo</b><p>Downwind there, upwind back.</p></li>
+    </ol>
+    <div class="mosaic" data-galeria="tripu" style="margin-top:14px">
+      <figure class="w2 h2 wide-m" data-foto-fig="t-sean"></figure>
+      <figure class="w2 h2" data-foto-fig="t-regata"></figure>
+      <figure class="w2" data-foto-fig="t-proa"></figure>
+      <figure class="w2" data-foto-fig="t-chicos"></figure>
+    </div>
   </section>
 
   <!-- ======================= CONTACTO ======================= -->
   <section class="contact" id="contacto">
-    <p class="kicker" style="color:inherit;opacity:.8">Contacto</p>
-    <h2>Seguinos en Instagram</h2>
-    <p>Ahí contamos las navegadas y los arreglos. Si conociste a Kitkat en otra época, si tenés fotos o historias, o si querés preguntarnos algo, escribinos.</p>
+    <p class="kicker" style="color:inherit;opacity:.8"><span class="es">Contacto</span><span class="en">Contact</span></p>
+    <h2 class="es">Seguinos en Instagram</h2>
+    <h2 class="en">Follow us on Instagram</h2>
+    <p class="es">Ahí contamos las navegadas y los arreglos. Si conociste a Kitkat en otra época, si tenés fotos o historias, o si querés preguntarnos algo, escribinos.</p>
+    <p class="en">That is where we share our voyages and projects. If you knew Kitkat in another life, have photos or stories, or just want to ask us something, send us a message.</p>
     <div class="btns">
-      <a class="btn" href="<!--IG-->" target="_blank" rel="noopener"><!--ICONO-->Ver @<!--IGUSER--></a>
-      <a class="btn ghost" href="<!--IGDM-->" target="_blank" rel="noopener">Mandanos un mensaje</a>
+      <a class="btn" href="<!--IG-->" target="_blank" rel="noopener"><!--ICONO--><span class="es">Ver</span><span class="en">See</span> @<!--IGUSER--></a>
+      <a class="btn ghost" href="<!--IGDM-->" target="_blank" rel="noopener"><span class="es">Mandanos un mensaje</span><span class="en">Send us a message</span></a>
     </div>
   </section>
 
   <footer class="colophon">
     <span>Kitkat &middot; Endurance 37 &middot; Uruguay</span>
-    <span>Fotos históricas: Sylvia, Sean y Debie. No es una publicación de Tyler.</span>
+    <span class="es">Fotos históricas: Sylvia, Sean y Debie. No es una publicación de Tyler.</span>
+    <span class="en">Historic photos: Sylvia, Sean and Debie. Not a Tyler publication.</span>
   </footer>
 </main>
 

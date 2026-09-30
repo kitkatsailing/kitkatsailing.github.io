@@ -4,180 +4,273 @@ var FOTOS = {
   "src": "fotos/portada.jpg",
   "w": 2200,
   "h": 1650,
-  "t": "Fondeado, enero de 2023"
+  "t": "Fondeado, enero de 2023",
+  "en": "At anchor, January 2023"
  },
  "portada-alta": {
   "src": "fotos/portada-alta.jpg",
   "w": 1125,
   "h": 1500,
-  "t": "Fondeado, enero de 2023"
+  "t": "Fondeado, enero de 2023",
+  "en": "At anchor, January 2023"
+ },
+ "spi-izado": {
+  "src": "fotos/spi-izado.jpg",
+  "w": 1440,
+  "h": 1440,
+  "t": "El asimétrico izado, en la regata del 119 aniversario del YCU",
+  "en": "The asymmetric spinnaker flying, at the YCU 119th anniversary regatta"
+ },
+ "spi-dibujo": {
+  "src": "fotos/spi-dibujo.jpg",
+  "w": 1152,
+  "h": 1440,
+  "t": "El personaje que pintó Sylvia",
+  "en": "The figure Sylvia painted"
+ },
+ "spi-piso": {
+  "src": "fotos/spi-piso.jpg",
+  "w": 1152,
+  "h": 1440,
+  "t": "La sorpresa, desplegada en el varadero",
+  "en": "The surprise, spread out in the boatyard"
  },
  "nav-mayor": {
   "src": "fotos/nav-mayor.jpg",
   "w": 1125,
   "h": 1500,
-  "t": "La mayor roja al atardecer"
+  "t": "La mayor roja al atardecer",
+  "en": "The red mainsail at sunset"
  },
  "nav-yankee": {
   "src": "fotos/nav-yankee.jpg",
   "w": 1125,
   "h": 1500,
-  "t": "Yankee y mayor, rumbo al sol"
+  "t": "Yankee y mayor, rumbo al sol",
+  "en": "Yankee and main, heading into the sun"
  },
- "nav-velas": {
-  "src": "fotos/nav-velas.jpg",
-  "w": 1125,
-  "h": 1500,
-  "t": "Desde el pie del palo"
+ "nav-piria": {
+  "src": "fotos/nav-piria.jpg",
+  "w": 1080,
+  "h": 1080,
+  "t": "Llegando a Piriápolis",
+  "en": "Arriving at Piriápolis"
  },
- "nav-orejas": {
-  "src": "fotos/nav-orejas.jpg",
-  "w": 1125,
-  "h": 1500,
-  "t": "A orejas de burro, al amanecer"
- },
- "nav-botavara": {
-  "src": "fotos/nav-botavara.jpg",
-  "w": 1125,
-  "h": 1500,
-  "t": "La botavara y el sol que sale"
+ "nav-faro": {
+  "src": "fotos/nav-faro.jpg",
+  "w": 1080,
+  "h": 1080,
+  "t": "En conserva, rumbo a Piriápolis",
+  "en": "Sailing in company towards Piriápolis"
  },
  "nav-ocaso": {
   "src": "fotos/nav-ocaso.jpg",
   "w": 1125,
   "h": 1500,
-  "t": "Cae el sol sobre el Río de la Plata"
+  "t": "Cae el sol sobre el Río de la Plata",
+  "en": "Sunset over the Río de la Plata"
  },
- "nav-costado": {
-  "src": "fotos/nav-costado.jpg",
+ "nav-regata": {
+  "src": "fotos/nav-regata.jpg",
+  "w": 1152,
+  "h": 1440,
+  "t": "Regata en Montevideo",
+  "en": "Racing off Montevideo"
+ },
+ "nav-velas": {
+  "src": "fotos/nav-velas.jpg",
   "w": 1125,
   "h": 1500,
-  "t": "Por la banda, a la puesta"
+  "t": "Desde el pie del palo",
+  "en": "From the foot of the mast"
  },
- "nav-casa": {
-  "src": "fotos/nav-casa.jpg",
-  "w": 1500,
-  "h": 1125,
-  "t": "La casilla con la última luz"
+ "nav-fondeo": {
+  "src": "fotos/nav-fondeo.jpg",
+  "w": 1080,
+  "h": 1080,
+  "t": "Fondeado en Piriápolis",
+  "en": "At anchor in Piriápolis"
  },
- "nav-cubierta": {
-  "src": "fotos/nav-cubierta.jpg",
-  "w": 1500,
-  "h": 1125,
-  "t": "Cubierta al atardecer"
+ "nav-noche": {
+  "src": "fotos/nav-noche.jpg",
+  "w": 1080,
+  "h": 1080,
+  "t": "De noche, en el puerto",
+  "en": "In harbour at night"
  },
- "nav-proa": {
-  "src": "fotos/nav-proa.jpg",
-  "w": 1600,
-  "h": 1200,
-  "t": "La proa y la ciudad"
+ "nav-chapuzon": {
+  "src": "fotos/nav-chapuzon.jpg",
+  "w": 720,
+  "h": 720,
+  "t": "Un chapuzón desde la borda",
+  "en": "A swim off the side"
+ },
+ "nav-botavara": {
+  "src": "fotos/nav-botavara.jpg",
+  "w": 1125,
+  "h": 1500,
+  "t": "La botavara y el sol que sale",
+  "en": "The boom and the rising sun"
+ },
+ "nav-bsas": {
+  "src": "fotos/nav-bsas.jpg",
+  "w": 1080,
+  "h": 1080,
+  "t": "En Buenos Aires",
+  "en": "In Buenos Aires"
  },
  "salon": {
   "src": "fotos/salon.jpg",
-  "w": 1080,
-  "h": 1080,
-  "t": "El salón de cubierta"
+  "w": 1440,
+  "h": 1081,
+  "t": "El salón, con el tapizado nuevo",
+  "en": "The saloon, with its new upholstery"
  },
  "navegacion": {
   "src": "fotos/navegacion.jpg",
   "w": 1024,
   "h": 768,
-  "t": "Mesa de navegación y tablero"
+  "t": "Mesa de navegación y tablero",
+  "en": "Chart table and switchboard"
  },
  "cocina": {
   "src": "fotos/cocina.jpg",
   "w": 1024,
   "h": 768,
-  "t": "La cocina"
+  "t": "La cocina",
+  "en": "The galley"
  },
- "dinette": {
-  "src": "fotos/dinette.jpg",
-  "w": 1024,
-  "h": 768,
-  "t": "La dinette"
+ "timon": {
+  "src": "fotos/timon.jpg",
+  "w": 1080,
+  "h": 1080,
+  "t": "En la rueda",
+  "en": "At the wheel"
  },
  "camarote": {
   "src": "fotos/camarote.jpg",
   "w": 768,
   "h": 1024,
-  "t": "Camarote de proa"
- },
- "cubierta": {
-  "src": "fotos/cubierta.jpg",
-  "w": 1080,
-  "h": 1080,
-  "t": "La cubierta hacia proa"
+  "t": "Camarote de proa",
+  "en": "Forward cabin"
  },
  "grua": {
   "src": "fotos/grua.jpg",
-  "w": 1600,
-  "h": 1200,
-  "t": "En la grúa, enero de 2023"
+  "w": 1440,
+  "h": 1081,
+  "t": "A seco en el YCU, enero de 2023",
+  "en": "Hauled out at the YCU, January 2023"
+ },
+ "obra": {
+  "src": "fotos/obra.jpg",
+  "w": 1440,
+  "h": 1081,
+  "t": "Pintando la obra muerta",
+  "en": "Painting the topsides"
+ },
+ "vuelve": {
+  "src": "fotos/vuelve.jpg",
+  "w": 1080,
+  "h": 1080,
+  "t": "De vuelta al agua, setiembre de 2023",
+  "en": "Back in the water, September 2023"
  },
  "nombre": {
   "src": "fotos/nombre.jpg",
   "w": 1600,
   "h": 1200,
-  "t": "El nombre en la proa"
- },
- "varada": {
-  "src": "fotos/varada.jpg",
-  "w": 1600,
-  "h": 1200,
-  "t": "En el varadero"
+  "t": "El nombre en la proa",
+  "en": "The name on the bow"
  },
  "h-casa": {
   "src": "fotos/h-casa.jpg",
   "w": 801,
   "h": 600,
-  "t": "Con grúa, entre las casas: la salida del fondo donde Peter lo terminó"
+  "t": "Con grúa, entre las casas: la salida del fondo donde Peter lo terminó",
+  "en": "Craned out between the houses, from the garden where Peter finished her"
  },
  "h-amarra": {
   "src": "fotos/h-amarra.jpg",
   "w": 801,
   "h": 600,
-  "t": "En su amarra, en Inglaterra"
+  "t": "En su amarra, en Inglaterra",
+  "en": "On her mooring in England"
  },
  "h-blanco": {
   "src": "fotos/h-blanco.jpg",
   "w": 825,
   "h": 1100,
-  "t": "Navegando con Peter y Sylvia"
+  "t": "Navegando con Peter y Sylvia",
+  "en": "Sailing with Peter and Sylvia"
  },
  "h-rojas": {
   "src": "fotos/h-rojas.jpg",
   "w": 828,
   "h": 1100,
-  "t": "Las velas rojas, ya entonces"
+  "t": "Las velas rojas, ya entonces",
+  "en": "Red sails, even back then"
  },
  "h-marea": {
   "src": "fotos/h-marea.jpg",
   "w": 900,
   "h": 1200,
-  "t": "En seco con la bajante, en la época de Sean y Debie"
+  "t": "En seco con la bajante, en la época de Sean y Debie",
+  "en": "Dried out at low tide, in Sean and Debie's days"
  },
  "h-nieve": {
   "src": "fotos/h-nieve.jpg",
   "w": 825,
   "h": 1100,
-  "t": "Kitkat bajo la nieve"
+  "t": "Kitkat bajo la nieve",
+  "en": "Kitkat under snow"
  },
  "h-montana": {
   "src": "fotos/h-montana.jpg",
   "w": 900,
   "h": 1200,
-  "t": "Con Sean y Debie, entre montañas"
+  "t": "Con Sean y Debie, entre montañas",
+  "en": "With Sean and Debie, among the mountains"
  },
  "h-puerto": {
   "src": "fotos/h-puerto.jpg",
   "w": 900,
   "h": 1200,
-  "t": "Con Sean y Debie, en puerto"
+  "t": "Con Sean y Debie, en puerto",
+  "en": "With Sean and Debie, in harbour"
  },
  "h-colonia": {
   "src": "fotos/h-colonia.jpg",
   "w": 1300,
   "h": 975,
-  "t": "En Colonia, mayo de 2020. Foto: @barullo.sailing"
+  "t": "En Colonia, mayo de 2020. Foto: @barullo.sailing",
+  "en": "Colonia, May 2020. Photo: @barullo.sailing"
+ },
+ "t-sean": {
+  "src": "fotos/t-sean.jpg",
+  "w": 1080,
+  "h": 1080,
+  "t": "Navegando otra vez con Sean, marzo de 2024",
+  "en": "Sailing with Sean again, March 2024"
+ },
+ "t-regata": {
+  "src": "fotos/t-regata.jpg",
+  "w": 1440,
+  "h": 1440,
+  "t": "Con amigos, en la regata del YCU",
+  "en": "With friends at the YCU regatta"
+ },
+ "t-proa": {
+  "src": "fotos/t-proa.jpg",
+  "w": 720,
+  "h": 720,
+  "t": "Mirando el agua desde proa",
+  "en": "Watching the water from the bow"
+ },
+ "t-chicos": {
+  "src": "fotos/t-chicos.jpg",
+  "w": 1440,
+  "h": 1440,
+  "t": "Kitkat, según los más chicos",
+  "en": "Kitkat, as seen by the kids"
  }
 };

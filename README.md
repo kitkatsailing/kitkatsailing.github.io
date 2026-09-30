@@ -1,6 +1,6 @@
 # Kitkat
 
-La web pública del velero Kitkat, un Endurance 37 cutter: su historia, el barco y el contacto
+La web pública del velero Kitkat, en español e inglés (según el idioma del navegador, con botón para cambiarlo),
 por Instagram ([@kitkatsailing](https://www.instagram.com/kitkatsailing/)).
 
 Publicada en https://reinamartin-ai.github.io/kitkat/
