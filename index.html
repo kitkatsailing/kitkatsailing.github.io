@@ -905,7 +905,7 @@ var FOTOS = {
     textos(); pintarVisitas();
   });
 
-  /* contador de visitas al pie (GoatCounter, código pacaca, ruta "kitkat/"). Si no responde o
+  /* contador de visitas al pie (GoatCounter, código pacaca, ruta "/kitkat"). Si no responde o
      todavía no hay visitas (404), no se muestra nada. */
   var visitas = null;
   function pintarVisitas(){
@@ -915,7 +915,13 @@ var FOTOS = {
     el.hidden = false;
   }
   if(location.protocol === "https:" && window.fetch){
-    fetch("https://pacaca.goatcounter.com/counter/" + encodeURIComponent("kitkat/") + ".json").then(function(r){ return r.ok ? r.json() : null; }).then(function(j){
+    /* GoatCounter guarda la ruta como "/kitkat". Sin fechas, la respuesta queda vieja en un caché
+       por horas: por eso se piden fechas que cambian cada hora (el inicio es un día de setiembre
+       ANTERIOR a la publicación, que fue el 29/09/2026, así que el total es el mismo). */
+    var ahora = new Date();
+    var fin = new Date(ahora.getTime() + 864e5).toISOString().slice(0, 10);
+    var inicio = "2026-09-" + ("0" + (ahora.getUTCHours() + 1)).slice(-2);
+    fetch("https://pacaca.goatcounter.com/counter/" + encodeURIComponent("/kitkat") + ".json?start=" + inicio + "&end=" + fin).then(function(r){ return r.ok ? r.json() : null; }).then(function(j){
       var n = j && parseInt(String(j.count).replace(/\D/g, ""), 10);
       if(n >= 0){ visitas = n; pintarVisitas(); }
     }).catch(function(){});
