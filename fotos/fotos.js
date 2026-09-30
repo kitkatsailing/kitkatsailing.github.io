@@ -2,24 +2,10 @@
 var FOTOS = {
  "portada": {
   "src": "fotos/portada.jpg",
-  "w": 2200,
-  "h": 1650,
-  "t": "Fondeado, enero de 2023",
-  "en": "At anchor, January 2023"
- },
- "portada-alta": {
-  "src": "fotos/portada-alta.jpg",
-  "w": 1125,
-  "h": 1500,
-  "t": "Fondeado, enero de 2023",
-  "en": "At anchor, January 2023"
- },
- "spi-izado": {
-  "src": "fotos/spi-izado.jpg",
   "w": 1440,
   "h": 1440,
-  "t": "El asimétrico izado, en la regata del 119 aniversario del YCU",
-  "en": "The asymmetric spinnaker flying, at the YCU 119th anniversary regatta"
+  "t": "Kitkat con el spinnaker de Sylvia, en la regata del 119 aniversario del YCU",
+  "en": "Kitkat flying Sylvia's spinnaker at the YCU 119th anniversary regatta"
  },
  "spi-dibujo": {
   "src": "fotos/spi-dibujo.jpg",

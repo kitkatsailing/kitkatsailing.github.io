@@ -27,10 +27,8 @@ SALIDA = os.path.join(AQUI, "fotos")
 # Nunca las capturas de mapas: muestran el nombre del usuario.
 FOTOS = {
  # portada
- "portada":      (RB + "IMG_7166.HEIC", 2200, "Fondeado, enero de 2023", "At anchor, January 2023"),
- "portada-alta": (RB + "20230114_135210.jpg", 1500, "Fondeado, enero de 2023", "At anchor, January 2023"),
+ "portada":      ("ig:DMVXnfgx8rM_02.jpg", 1440, "Kitkat con el spinnaker de Sylvia, en la regata del 119 aniversario del YCU", "Kitkat flying Sylvia's spinnaker at the YCU 119th anniversary regatta"),
  # el spinnaker de Sylvia
- "spi-izado":    ("ig:DMVXnfgx8rM_02.jpg", 1440, "El asimétrico izado, en la regata del 119 aniversario del YCU", "The asymmetric spinnaker flying, at the YCU 119th anniversary regatta"),
  "spi-dibujo":   ("ig:Cp5OLJQrk9Y_02.jpg", 1440, "El personaje que pintó Sylvia", "The figure Sylvia painted"),
  "spi-piso":     ("ig:Cp5OLJQrk9Y_01.jpg", 1440, "La sorpresa, desplegada en el varadero", "The surprise, spread out in the boatyard"),
  # navegando
