@@ -112,12 +112,26 @@ var FOTOS = {
   "t": "El salón, con el tapizado nuevo",
   "en": "The saloon, with its new upholstery"
  },
- "navegacion": {
-  "src": "fotos/navegacion.jpg",
-  "w": 1024,
-  "h": 768,
-  "t": "Mesa de navegación y tablero",
-  "en": "Chart table and switchboard"
+ "salon-largo": {
+  "src": "fotos/salon-largo.jpg",
+  "w": 1080,
+  "h": 1080,
+  "t": "El salón de punta a punta: cocina, dinette y tablero",
+  "en": "The saloon end to end: galley, dinette and switchboard"
+ },
+ "salon-bajada": {
+  "src": "fotos/salon-bajada.jpg",
+  "w": 1080,
+  "h": 1080,
+  "t": "El salón, hacia la escalera de la bañera",
+  "en": "The saloon, looking towards the companionway"
+ },
+ "tablero": {
+  "src": "fotos/tablero.jpg",
+  "w": 1400,
+  "h": 1050,
+  "t": "El tablero",
+  "en": "The switchboard"
  },
  "cocina": {
   "src": "fotos/cocina.jpg",
@@ -133,12 +147,12 @@ var FOTOS = {
   "t": "En la rueda",
   "en": "At the wheel"
  },
- "camarote": {
-  "src": "fotos/camarote.jpg",
-  "w": 768,
-  "h": 1024,
-  "t": "Camarote de proa",
-  "en": "Forward cabin"
+ "bar": {
+  "src": "fotos/bar.jpg",
+  "w": 1050,
+  "h": 1400,
+  "t": "El bar",
+  "en": "The bar"
  },
  "grua": {
   "src": "fotos/grua.jpg",

@@ -46,10 +46,12 @@ FOTOS = {
  "nav-bsas":     ("ig:DASAbwxusMI_02.jpg", 1440, "En Buenos Aires", "In Buenos Aires"),
  # a bordo
  "salon":        ("ig:Cy8l99wLD-M_02.jpg", 1440, "El salón, con el tapizado nuevo", "The saloon, with its new upholstery"),
- "navegacion":   (F + "Varios/PHOTO-2022-10-25-11-12-05(2).jpg", 1400, "Mesa de navegación y tablero", "Chart table and switchboard"),
+ "salon-largo":  (F + "Inspección inicial/WhatsApp Image 2022-12-22 at 14.34.37.jpeg", 1080, "El salón de punta a punta: cocina, dinette y tablero", "The saloon end to end: galley, dinette and switchboard"),
+ "salon-bajada": (F + "Inspección inicial/WhatsApp Image 2022-12-22 at 14.34.38 (1).jpeg", 1080, "El salón, hacia la escalera de la bañera", "The saloon, looking towards the companionway"),
+ "tablero":      (F + "Inspección inicial/WhatsApp Image 2022-12-20 at 14.06.06.jpeg", 1400, "El tablero", "The switchboard"),
  "cocina":       (F + "Varios/PHOTO-2022-10-25-11-12-05(4).jpg", 1400, "La cocina", "The galley"),
  "timon":        ("ig:C3f8NHpLSun_07.jpg", 1440, "En la rueda", "At the wheel"),
- "camarote":     (F + "Varios/PHOTO-2022-10-25-11-40-30.jpg", 1400, "Camarote de proa", "Forward cabin"),
+ "bar":          (F + "20230103-05 Riachuelo/IMG_7089.HEIC", 1400, "El bar", "The bar"),
  # en seco y la puesta a punto
  "grua":         ("ig:CnrgbG2uI1Y_01.jpg", 1440, "A seco en el YCU, enero de 2023", "Hauled out at the YCU, January 2023"),
  "obra":         ("ig:CpYVO8POcGY_02.jpg", 1440, "Pintando la obra muerta", "Painting the topsides"),
