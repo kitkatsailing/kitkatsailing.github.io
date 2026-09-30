@@ -30,7 +30,8 @@
     textos(); pintarVisitas();
   });
 
-  /* contador de visitas al pie (GoatCounter, código pacaca). Si no responde, no se muestra nada. */
+  /* contador de visitas al pie (GoatCounter, código pacaca, ruta "kitkat/"). Si no responde o
+     todavía no hay visitas (404), no se muestra nada. */
   var visitas = null;
   function pintarVisitas(){
     var el = $("#visitas"); if(visitas == null || !el) return;
@@ -39,7 +40,7 @@
     el.hidden = false;
   }
   if(location.protocol === "https:" && window.fetch){
-    fetch("https://pacaca.goatcounter.com/counter/TOTAL.json").then(function(r){ return r.ok ? r.json() : null; }).then(function(j){
+    fetch("https://pacaca.goatcounter.com/counter/" + encodeURIComponent("kitkat/") + ".json").then(function(r){ return r.ok ? r.json() : null; }).then(function(j){
       var n = j && parseInt(String(j.count).replace(/\D/g, ""), 10);
       if(n >= 0){ visitas = n; pintarVisitas(); }
     }).catch(function(){});

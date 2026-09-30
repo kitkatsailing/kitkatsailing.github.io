@@ -249,8 +249,8 @@ var FOTOS = {
   "src": "fotos/t-proa.jpg",
   "w": 720,
   "h": 720,
-  "t": "Mirando el agua desde proa",
-  "en": "Watching the water from the bow"
+  "t": "Sentados sobre la cabina, mirando el agua",
+  "en": "Sitting on the cabin roof, watching the water"
  },
  "t-chicos": {
   "src": "fotos/t-chicos.jpg",

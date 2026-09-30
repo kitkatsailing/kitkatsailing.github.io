@@ -70,7 +70,7 @@ FOTOS = {
  # la tripulación de hoy
  "t-sean":       ("ig:C4A2hu-ruHT_01.jpg", 1440, "Navegando otra vez con Sean, marzo de 2024", "Sailing with Sean again, March 2024"),
  "t-regata":     ("ig:DMVXnfgx8rM_01.jpg", 1440, "Con amigos, en la regata del YCU", "With friends at the YCU regatta"),
- "t-proa":       ("ig:C3f8NHpLSun_06.jpg", 1440, "Mirando el agua desde proa", "Watching the water from the bow"),
+ "t-proa":       ("ig:C3f8NHpLSun_06.jpg", 1440, "Sentados sobre la cabina, mirando el agua", "Sitting on the cabin roof, watching the water"),
  "t-chicos":     ("ig:DMITInIR6-G_02.jpg", 1440, "Kitkat, según los más chicos", "Kitkat, as seen by the kids"),
 }
 
