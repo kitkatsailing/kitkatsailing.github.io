@@ -25,6 +25,7 @@ SALIDA = os.path.join(AQUI, "fotos")
 # clave: (archivo relativo a GENERAL, o "ig:<archivo en instagram/>", lado mayor en px, epígrafe, caption)
 # Las fotos del Instagram se pueden usar tal cual, aunque tengan caras (lo dijo el usuario).
 # Nunca las capturas de mapas: muestran el nombre del usuario.
+# Dos o más archivos separados por " + " se pegan uno al lado del otro, a la misma altura.
 FOTOS = {
  # portada
  "portada":      ("ig:DMVXnfgx8rM_02.jpg", 1440, "Kitkat con el spinnaker de Sylvia, en la regata del 119 aniversario del YCU", "Kitkat flying Sylvia's spinnaker at the YCU 119th anniversary regatta"),
@@ -74,7 +75,7 @@ FOTOS = {
  "t-sean":       ("ig:C4A2hu-ruHT_01.jpg", 1440, "Navegando otra vez con Sean, marzo de 2024", "Sailing with Sean again, March 2024"),
  "t-regata":     ("ig:DMVXnfgx8rM_01.jpg", 1440, "Con amigos, en la regata del YCU", "With friends at the YCU regatta"),
  "t-proa":       ("ig:C3f8NHpLSun_06.jpg", 1440, "Sentados sobre la cabina, mirando el agua", "Sitting on the cabin roof, watching the water"),
- "t-chicos":     ("ig:DMITInIR6-G_02.jpg", 1440, "Kitkat, según los más chicos", "Kitkat, as seen by the kids"),
+ "t-chicos":     ("ig:DMITInIR6-G_01.jpg + ig:DMITInIR6-G_02.jpg", 2000, "Kitkat, según los más chicos", "Kitkat, as seen by the kids"),
 }
 
 os.makedirs(SALIDA, exist_ok=True)
@@ -82,10 +83,18 @@ for f in os.listdir(SALIDA):                      # sin restos de selecciones an
     if f.endswith(".jpg"): os.remove(os.path.join(SALIDA, f))
 meta, faltan, total = {}, [], 0
 for clave, (rel, lado, epi, cap) in FOTOS.items():
-    ruta = os.path.join(IG, rel[3:]) if rel.startswith("ig:") else os.path.join(GENERAL, rel)
-    if not os.path.isfile(ruta):
+    rutas = [os.path.join(IG, r[3:]) if r.startswith("ig:") else os.path.join(GENERAL, r) for r in rel.split(" + ")]
+    if not all(os.path.isfile(r) for r in rutas):
         faltan.append(clave); continue
-    im = ImageOps.exif_transpose(Image.open(ruta)).convert("RGB")
+    partes = [ImageOps.exif_transpose(Image.open(r)).convert("RGB") for r in rutas]
+    im = partes[0]
+    if len(partes) > 1:                           # collage: lado a lado, con un filete color papel
+        alto, sep = min(p.height for p in partes), 24
+        partes = [p.resize((round(p.width * alto / p.height), alto), Image.LANCZOS) for p in partes]
+        im = Image.new("RGB", (sum(p.width for p in partes) + sep * (len(partes) - 1), alto), "#f4ede0")
+        x = 0
+        for p in partes:
+            im.paste(p, (x, 0)); x += p.width + sep
     im.thumbnail((lado, lado), Image.LANCZOS)
     destino = os.path.join(SALIDA, clave + ".jpg")
     im.save(destino, "JPEG", quality=80, optimize=True, progressive=True)   # sin exif: sin GPS

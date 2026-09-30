@@ -275,8 +275,8 @@ var FOTOS = {
  },
  "t-chicos": {
   "src": "fotos/t-chicos.jpg",
-  "w": 1440,
-  "h": 1440,
+  "w": 2000,
+  "h": 992,
   "t": "Kitkat, según los más chicos",
   "en": "Kitkat, as seen by the kids"
  }
