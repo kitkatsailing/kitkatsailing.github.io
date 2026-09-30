@@ -3,7 +3,7 @@
 La web pública del velero Kitkat, en español e inglés (según el idioma del navegador, con botón para cambiarlo),
 por Instagram ([@kitkatsailing](https://www.instagram.com/kitkatsailing/)).
 
-Publicada en https://reinamartin-ai.github.io/kitkat/
+Publicada en https://kitkatsailing.github.io/
 
 ## Cómo se edita
 

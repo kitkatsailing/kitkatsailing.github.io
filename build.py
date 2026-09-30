@@ -10,7 +10,7 @@ Publicar: git add -A && git commit && git push  (GitHub Pages sirve la rama main
 """
 import io, os, re, sys
 
-URL = "https://reinamartin-ai.github.io/kitkat/"
+URL = "https://kitkatsailing.github.io/"
 IG_USER = "kitkatsailing"
 ICONO_IG = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">'
             '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/>'
