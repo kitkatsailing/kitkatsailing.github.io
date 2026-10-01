@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kitkatsailing.github.io/sitemap.xml
